@@ -18,18 +18,18 @@ class ZipcodeController extends Controller
         //
     }
 
-    public function Estados($id)
+    public function Estados(Request $request, $zip_code)
     {
         $datajson = array();
 
-        $zipcode = DB::select('SELECT * FROM codigos_postales where d_codigo = '.$id);
+        $zipcode = DB::select('SELECT * FROM codigos_postales where d_codigo = '.$zip_code);
         //dd($zipcode);
 
         foreach ($zipcode as $obj ) {
 
-            $federal = $this->FederalEntity($id,$obj->d_estado);
-            $settlements = $this->settlements($id,$obj->d_estado);
-            $municipality = $this->municipality($id,$obj->d_estado);
+            $federal = $this->FederalEntity($zip_code,$obj->d_estado);
+            $settlements = $this->settlements($zip_code,$obj->d_estado);
+            $municipality = $this->municipality($zip_code,$obj->d_estado);
 
             $datajson = array(
                 'zip_code' => $obj->d_codigo,
