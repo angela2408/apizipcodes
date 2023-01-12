@@ -62,3 +62,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Notas de Solución :
+
+En primera instancia intente utilizar la metodología de json para leer los datos a través de un archivo obtenido de la fuente de datos para no tener que crear una base de datos en mysql, sin embargo como se menciona que el tiempo de respuesta debe ser rápido, analice y opté por mejor guardar los registros en una base de datos en mysql.
+
+
+La estructura para la base de datos esta en el siguiente directorio
+/storage/app/datos.sql
