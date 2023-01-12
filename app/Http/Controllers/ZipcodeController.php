@@ -22,7 +22,7 @@ class ZipcodeController extends Controller
     {
         $datajson = array();
 
-        $zipcode = DB::select('SELECT * FROM laravel.codigos_postales where d_codigo = '.$id);
+        $zipcode = DB::select('SELECT * FROM codigos_postales where d_codigo = '.$id);
         //dd($zipcode);
 
         foreach ($zipcode as $obj ) {
@@ -47,7 +47,7 @@ class ZipcodeController extends Controller
     public function FederalEntity($id,$estado)
     {
 
-        $zipcodeFederal = DB::select('SELECT * FROM laravel.codigos_postales where d_codigo = '.$id.' and d_estado = '."'$estado'");
+        $zipcodeFederal = DB::select('SELECT * FROM codigos_postales where d_codigo = '.$id.' and d_estado = '."'$estado'");
         $datajson = array();
         foreach ($zipcodeFederal as $obj ) {
             $datajson = array(
@@ -63,7 +63,7 @@ class ZipcodeController extends Controller
 
     public function settlements($id,$estado)
     {
-        $zipcodeSett = DB::select('SELECT * FROM laravel.codigos_postales where d_codigo = '.$id.' and d_estado = '."'$estado'");
+        $zipcodeSett = DB::select('SELECT * FROM codigos_postales where d_codigo = '.$id.' and d_estado = '."'$estado'");
         $datajson = array();
         foreach ($zipcodeSett as $obj ) {
             $datajson[] = array(
@@ -83,7 +83,7 @@ class ZipcodeController extends Controller
 
     public function municipality($id,$estado)
     {
-        $zipcodeMuni = DB::select('SELECT * FROM laravel.codigos_postales where d_codigo = '.$id.' and d_estado = '."'$estado'");
+        $zipcodeMuni = DB::select('SELECT * FROM codigos_postales where d_codigo = '.$id.' and d_estado = '."'$estado'");
         $datajson = array();
         foreach ($zipcodeMuni as $obj ) {
             $datajson = array(
